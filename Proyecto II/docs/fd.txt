@@ -1,0 +1,12 @@
+archivo = "ruta_original_del_archivo"
+cantidad=16
+longitud=6
+desviacion=3
+sustitucion=0
+delecion=0
+quimeras=0
+insercion=0
+inversion=0
+cobertura_promedio = 5
+cobertura_total = 100%
+

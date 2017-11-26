@@ -1,6 +1,8 @@
+
+
 Generador de fragmentos:
 
-    - recibir archivo de texto
+    - recibir archivo de texto o arhivo descriptivo
     - se deben sustituir los enter por espacios
 
     cantidad de fragmentos:
