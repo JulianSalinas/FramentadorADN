@@ -1,0 +1,70 @@
+Generador de fragmentos:
+
+    - recibir archivo de texto
+    - se deben sustituir los enter por espacios
+
+    cantidad de fragmentos:
+        - longitud promedio y desviacion estandar, es igual a:
+            - minimo
+            - maximo
+
+    probabilidades de errores:
+        - sustitucion
+        - insercion
+        - delecion
+        - quimeras
+        - inversion
+
+    porcentaje de cobertura
+
+    rango de valores de translape:
+        - minimo
+        - maximo
+        - escoger aleatorio entre max y min
+
+    opcion para cubrir totalmente la hilera base
+
+    generar archivo descriptivo:
+        - tiene todos los parametros usados
+        - contiene la descripcion de los errores creados
+        - se debe permitir reejecucion
+
+    modo batch:
+        - generar varias colecciones de fragmentos
+        - nombre generico
+        - numero consecutivo
+        - a partir de archivo descriptivo o parametros
+
+Ensamblador:
+
+    - recibir archivo de fragmentos separados por enter
+
+    lista fragmentos:
+        - alfabeticamente
+        - largo
+        - mayores o menores a un valor dado
+        - buscar palabras claves
+
+    algoritmo de ensamblaje de grafo de translapes
+
+        - obtener superhilera minima comun
+
+        - generar grafo
+
+        - visualizar o ver el grafo:
+            - ver valores de traslapes (pesos)
+            - direccion de los arcos
+
+        - pedir grafo simplificado
+            - valor de translape minimo
+            - indicar si el grafo generado es conexo
+
+        - generar grafo conexo minimo:
+            - a partir del grafo original
+            - seleccionar los mayores traslapes hasta que el grafo se conexo
+
+        - informar si se produjeron islas en caso que el grafo fuera no conexo
+        - hacer una comparacion de similitud entre la hilera original y la ensamblada:
+            se puede solicitar la hilera original
+
+
