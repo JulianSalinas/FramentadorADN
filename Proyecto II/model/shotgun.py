@@ -1,39 +1,57 @@
+# ----------------------------------------------------------------------------------------------------------------------
+
 import numpy as np
 from util.file import *
 
-# Pedir al usuario:
-# -La cantidad de fragmentos que desea
-# -Promedio del tamanno de cada fragmento
-# -
-# -Decidir si incluir estos datos en el archivo donde esta el texto o se le solicita
-# por medio de la consola
+# ----------------------------------------------------------------------------------------------------------------------
 
 class Shotgun(object):
 
-    def __init__(self, nombre_archivo_entrada, nombre_archivo_salida, cantidad, desviacion, promedio_tamanho):
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def __init__(self, nombre_archivo_entrada, nombre_archivo_salida, cantidad_fragmentos,
+                 promedio_tamanho, desviacion_estandar, traslape_minimo, traslape_maximo,
+                 sustituciones=0, inserciones=0, deleciones=0, inversiones=0, quimeras=0):
+
+    # ------------------------------------------------------------------------------------------------------------------
 
         self.nombre_archivo_entrada = nombre_archivo_entrada
         self.nombre_archivo_salida = nombre_archivo_salida
 
-        self.texto = leer_y_sustituir_por_espacios(nombre_archivo_entrada)
-        print(self.texto + "\n")
-
-        self.cantidad = cantidad
-        self.desviacion = desviacion
+        self.cantidad_fragmentos = cantidad_fragmentos
         self.promedio_tamanho = promedio_tamanho
+        self.desviacion_estandar = desviacion_estandar
 
-        self.fragmentos = []
+        self.traslape_minimo = traslape_minimo
+        self.traslape_maximo = traslape_maximo
+
+        self.sustituciones = sustituciones
+        self.inserciones = inserciones
+        self.delecioens = deleciones
+        self.inversiones = inversiones
+        self.quimeras = quimeras
+
+        self.frags = self.ejecutar()
+        self.guardar()
+
+    # ------------------------------------------------------------------------------------------------------------------
 
     def ejecutar(self):
-        rango = calcularRango(self.desviacion, self.promedio_tamanho)
-        frags = generadorFragmentos(self.texto, self.cantidad, rango)
-        print(str(frags) + "\n")
-        frags = agregar_errores(self.texto, frags, 60, sustitucion)
-        frags = agregar_errores(self.texto, frags, 60, insercion)
-        frags = agregar_errores(self.texto, frags, 60, delecion)
-        print(str(frags) + "\n")
-        escribir_archivo_fragmentos(self.nombre_archivo_salida, frags)
+        texto = leer_y_sustituir_por_espacios(self.nombre_archivo_entrada)
+        print("Texto original: " + texto)
+        rango = calcularRango(self.desviacion_estandar, self.promedio_tamanho)
+        frags = generadorFragmentos(texto, self.cantidad_fragmentos, rango, self.traslape_minimo, self.traslape_maximo)
+        # frags = agregar_errores(texto, frags, 60, sustitucion)
+        # frags = agregar_errores(texto, frags, 60, insercion)
+        # frags = agregar_errores(texto, frags, 60, delecion)
+        print("Fragmentos generados: " + str(frags))
+        return frags
 
+    def guardar(self):
+        # Colocar aqui el crear el archivo descriptivo
+        escribir_archivo_fragmentos(self.nombre_archivo_salida, self.frags)
+
+    # ------------------------------------------------------------------------------------------------------------------
 
 
 def leer_y_sustituir_por_espacios(nombre_archivo):
@@ -53,13 +71,16 @@ def calcularRango(desviacion, promedio):
     rango = [promedio-desviacion, promedio+desviacion]
     return rango
 
-def obtenerFragmentos(i, texto, frags, rango, cantidad):
+def obtenerFragmentos(i, texto, frags, rango, cantidad, traslapeMin, traslapeMax):
     longMin = rango[0]
     longMax = rango[1]
     while i<len(texto):
         tamanno= np.random.randint(longMin, longMax)
         frag=""
         cont=0
+        traslape = np.random.randint(traslapeMin, traslapeMax)
+        if (i > traslape):
+            i -= traslape
         while cont < tamanno and i<len(texto):
             frag=frag+texto[i]
             i+= 1
@@ -69,17 +90,16 @@ def obtenerFragmentos(i, texto, frags, rango, cantidad):
             break
     return frags
 
-def generadorFragmentos(texto, cantidad, rango):
-    longMin = rango[0]
-    longMax = rango[1]
+def generadorFragmentos(texto, cantidad, rango, traslapeMin, traslapeMax):
     frags = []
     i=0
-    frags = obtenerFragmentos(i, texto, frags, rango, cantidad)
+    frags = obtenerFragmentos(i, texto, frags, rango, cantidad, traslapeMin, traslapeMax)
     while len(frags) < cantidad:
         i = np.random.randint(0, len(frags))
-        frags = obtenerFragmentos(i, texto, frags, rango, cantidad)
+        frags = obtenerFragmentos(i, texto, frags, rango, cantidad, traslapeMin, traslapeMax)
 
     return frags
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
@@ -124,7 +144,6 @@ def delecion(cadena, *dominio):
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-#
 # def quimera(*cadena, dominio):
 #
 #     frag1 = dominio[np.random.randint(0, len(dominio))]
@@ -164,6 +183,5 @@ def agregar_errores(texto, frags, porcentaje, funcion):
 #
 # # Ejemplo del generador de fragmentos (texto, cantidad, rangoInicial, rangoFinal)
 # print(generadorFragmentos(texto, 9, 3, 7))
-
-shotgun = Shotgun("../docs/prueba1.txt", "../docs/salida.txt", cantidad=2, desviacion=3, promedio_tamanho=6)
-shotgun.ejecutar()
+shotgun = Shotgun("../docs/prueba1.txt", "../docs/salida.txt", cantidad_fragmentos=20, desviacion_estandar=3, promedio_tamanho=10, traslape_minimo=2, traslape_maximo=6)
+# shotgun.ejecutar()

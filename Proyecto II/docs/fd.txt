@@ -10,3 +10,9 @@ inversion=0
 cobertura_promedio = 5
 cobertura_total = 100%
 
+sustituciones = [(cuenta, cuanta, 2), ...]
+insersiones = [(cuenta, cuennta, 3), ...]
+deleciones = [(cuenta, cunta, 2), ...]
+quimeras = [(cuenta, cunta, 2), ...]
+
+
