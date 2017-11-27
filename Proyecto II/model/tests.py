@@ -8,7 +8,7 @@ from model.dao_shotgun import *
 # Abrir el archivo, sustituir saltos de linea por espacios
 
 dao_shotgun = DAOShotgun()
-texto = dao_shotgun.abrir_archivo(nombre_archivo="../files/entrada.txt")
+texto = dao_shotgun.abrir_archivo_fragmentos(nombre_archivo="../files/entrada.txt")
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Generacion de fragmentos

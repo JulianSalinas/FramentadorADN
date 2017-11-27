@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
     def btn_fragmentos_clicked(self):
 
         dao_shotgun = DAOShotgun()
-        texto = dao_shotgun.abrir_archivo(self.txtFuente.text())
+        texto = dao_shotgun.abrir_archivo_fragmentos(self.txtFuente.text())
 
         alg_shotgun = AlgShotgun() \
             .set_cantidad_fragmentos(self.spinCantidad.value()) \
