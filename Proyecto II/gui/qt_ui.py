@@ -45,7 +45,7 @@ class MainWindow(QMainWindow):
 
         self.txtFuente.setText("../files/entrada.txt")
         self.txtDestino.setText("../files/")
-        self.txtNombre.setText("salida.txt")
+        self.txtNombre.setText("salida")
 
         self.spinCantidad.setValue(50)
         self.spinLongitud.setValue(6)
@@ -58,37 +58,79 @@ class MainWindow(QMainWindow):
 
     def btn_fragmentos_clicked(self):
 
+        descripcion = self.extraer_informacion_procesamiento()
+        fragmentos = self.ejecutar_algoritmos(descripcion)
+
+        archivo_fragmentos, archivo_descriptivo = self.guardar_archivos_obtenidos(fragmentos, descripcion)
+        self.mostrar_archivos_obtenidos(archivo_fragmentos, archivo_fragmentos)
+
+        self.statusbar.setText("Archivo de fragmentos generado como " + archivo_fragmentos)
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def ejecutar_algoritmos(self, params):
+
         dao_shotgun = DAOShotgun()
-        texto = dao_shotgun.abrir_archivo_fragmentos(self.txtFuente.text())
+        texto = dao_shotgun.abrir_archivo_fragmentos(params["archivo"])
 
-        alg_shotgun = AlgShotgun() \
-            .set_cantidad_fragmentos(self.spinCantidad.value()) \
-            .set_promedio_tamanho(self.spinLongitud.value()) \
-            .set_desviacion_estandar(self.spinDesviacion.value()) \
-            .set_rango_traslape((self.spinTraslapeMinimo.value(), self.spinTraslapeMaximo.value()))
-
+        alg_shotgun = AlgShotgun(params)
         fragmentos = alg_shotgun.generar_fragmentos(texto)
 
         alg_errores = AlgErrores(texto, fragmentos)
-        fragmentos = alg_errores.agregar_errores(
-            self.spinSustitucion.value(),
-            self.spinInsercion.value(),
-            self.spinDelecion.value(),
-            self.spinInversion.value(),
-            self.spinQuimeras.value()
-        )
+        fragmentos = alg_errores.agregar_errores(params["errores"])
 
-        archivo_salida = os.path.join(self.txtDestino.text(), self.txtNombre.text())
-        dao_shotgun.guardar_archivo(fragmentos, archivo_salida)
+        return fragmentos
 
-        archivo_salida = os.path.abspath(archivo_salida)
-        os.popen(archivo_salida)
+    # ------------------------------------------------------------------------------------------------------------------
 
-        self.statusbar.setText("Archivo de fragmentos generado como " + archivo_salida)
+    def extraer_informacion_procesamiento(self):
+
+        return {
+            "archivo": self.txtFuente.text(),
+            "cantidad_fragmentos": self.spinCantidad.value(),
+            "promedio_tamanho": self.spinLongitud.value(),
+            "desviacion_estandar": self.spinDesviacion.value(),
+            "rango_traslape": (self.spinTraslapeMinimo.value(), self.spinTraslapeMaximo.value()),
+            "errores": self.extraer_probabilidades_errores()
+        }
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def extraer_probabilidades_errores(self):
+
+        return {
+            "sustituciones": self.spinSustitucion.value(),
+            "inserciones": self.spinInsercion.value(),
+            "deleciones": self.spinDelecion.value(),
+            "inversiones": self.spinInversion.value(),
+            "quimeras": self.spinQuimeras.value()
+        }
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def guardar_archivos_obtenidos(self, fragmentos, descripcion):
+
+        archivo_fragmentos = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".txt")
+        archivo_descriptivo = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".json")
+
+        dao_shotgun = DAOShotgun()
+        dao_shotgun.guardar_archivo_fragmentos(fragmentos, archivo_fragmentos)
+        dao_shotgun.guardar_archivo_descriptivo(descripcion, archivo_descriptivo)
+
+        ap = lambda x: os.path.abspath(x)
+        return ap(archivo_fragmentos), ap(archivo_descriptivo)
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def mostrar_archivos_obtenidos(self, *archivos):
+
+        for archivo in archivos:
+            os.popen(archivo)
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def btn_abrir_fuente_clicked(self):
+
         open_dialog = QFileDialog()
         filename = open_dialog.getOpenFileName(self, "Abrir archivo", "../files")[0]
         if filename is not "":
@@ -98,6 +140,7 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------------------------------------------------------
 
     def btn_abrir_destino_clicked(self):
+
         open_dialog = QFileDialog()
         dirname = str(open_dialog.getExistingDirectory(self, "Abrir directorio"))
         if dirname is not "":
