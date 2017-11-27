@@ -17,17 +17,17 @@ class AlgErrores(object):
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    def agregar_errores(self, sustituciones=0, inserciones=0, deleciones=0, inversiones=0, quimeras=0):
+    def agregar_errores(self, dic_errores):
 
-        self.fragmentos = self.aplicar_errores(sustituciones, self.sustitucion)
-        self.fragmentos = self.aplicar_errores(inserciones, self.insercion)
-        self.fragmentos = self.aplicar_errores(deleciones, self.delecion)
-        self.fragmentos = self.aplicar_errores(inversiones, self.insercion)
-        self.fragmentos = self.aplicar_quimeras(quimeras)
+        self.fragmentos = self.aplicar_errores(dic_errores["sustituciones"], self.sustitucion)
+        self.fragmentos = self.aplicar_errores(dic_errores["inserciones"], self.insercion)
+        self.fragmentos = self.aplicar_errores(dic_errores["deleciones"], self.delecion)
+        self.fragmentos = self.aplicar_errores(dic_errores["inversiones"], self.insercion)
+        self.fragmentos = self.aplicar_quimeras(dic_errores["quimeras"])
 
         return self.fragmentos
 
-    # ------------------------------------------------------------------------------------------------------------------
+    # ----------------------------------- ------------------------------------------------------------------------------
 
     def aplicar_errores(self, porcentaje, funcion):
 
