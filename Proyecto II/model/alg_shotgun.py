@@ -9,41 +9,14 @@ class AlgShotgun(object):
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    def __init__(self):
+    def __init__(self, dic_procesamiento):
 
-        self.cantidad_fragmentos = 100
-        self.promedio_tamanho = 6
-        self.desviacion_estandar = 3
-        self.rango_traslape = (1, 4)
+        self.cantidad_fragmentos = dic_procesamiento["cantidad_fragmentos"]
+        self.promedio_tamanho = dic_procesamiento["promedio_tamanho"]
+        self.desviacion_estandar = dic_procesamiento["desviacion_estandar"]
+        self.rango_traslape = dic_procesamiento["rango_traslape"]
+
         self.fragmentos = []
-
-    # ------------------------------------------------------------------------------------------------------------------
-
-    def set_cantidad_fragmentos(self, cantidad_fragmentos):
-
-        self.cantidad_fragmentos = cantidad_fragmentos
-        return self
-
-    # ------------------------------------------------------------------------------------------------------------------
-
-    def set_promedio_tamanho(self, promedio_tamanho):
-
-        self.promedio_tamanho = promedio_tamanho
-        return self
-
-    # ------------------------------------------------------------------------------------------------------------------
-
-    def set_desviacion_estandar(self, desviacion_estandar):
-
-        self.desviacion_estandar = desviacion_estandar
-        return self
-
-    # ------------------------------------------------------------------------------------------------------------------
-
-    def set_rango_traslape(self, rango_traslape):
-
-        self.rango_traslape = rango_traslape
-        return self
 
     # ------------------------------------------------------------------------------------------------------------------
 
