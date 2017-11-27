@@ -435,6 +435,9 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
@@ -1338,7 +1341,7 @@
           </rect>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
@@ -1364,7 +1367,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="spinNombre">
+               <widget class="QLineEdit" name="txtNombre">
                 <property name="palette">
                  <palette>
                   <active>
@@ -2735,7 +2738,7 @@
                </widget>
               </item>
               <item row="2" column="2">
-               <widget class="QSpinBox" name="spinLogitud">
+               <widget class="QSpinBox" name="spinLongitud">
                 <property name="palette">
                  <palette>
                   <active>
@@ -6390,7 +6393,7 @@
                  </widget>
                 </item>
                 <item row="2" column="2">
-                 <widget class="QSpinBox" name="spinTranslapeMaximo">
+                 <widget class="QSpinBox" name="spinTraslapeMaximo">
                   <property name="palette">
                    <palette>
                     <active>
@@ -7737,7 +7740,7 @@
   <connection>
    <sender>horizontalSlider_2</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>spinLogitud</receiver>
+   <receiver>spinLongitud</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -7783,7 +7786,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinLogitud</sender>
+   <sender>spinLongitud</sender>
    <signal>valueChanged(int)</signal>
    <receiver>horizontalSlider_2</receiver>
    <slot>setValue(int)</slot>
@@ -7993,7 +7996,7 @@
   <connection>
    <sender>horizontalSlider_14</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>spinTranslapeMaximo</receiver>
+   <receiver>spinTraslapeMaximo</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -8023,7 +8026,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinTranslapeMaximo</sender>
+   <sender>spinTraslapeMaximo</sender>
    <signal>valueChanged(int)</signal>
    <receiver>horizontalSlider_14</receiver>
    <slot>setValue(int)</slot>

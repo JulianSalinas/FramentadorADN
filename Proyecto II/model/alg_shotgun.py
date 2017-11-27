@@ -4,11 +4,17 @@ import numpy as np
 
 # ----------------------------------------------------------------------------------------------------------------------
 
+
 class AlgShotgun(object):
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def __init__(self):
+
+        self.cantidad_fragmentos = 100
+        self.promedio_tamanho = 6
+        self.desviacion_estandar = 3
+        self.rango_traslape = (1, 4)
         self.fragmentos = []
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -73,7 +79,8 @@ class AlgShotgun(object):
             cont = 0
             traslape = np.random.randint(self.rango_traslape[0], self.rango_traslape[1])
 
-            if (i > traslape): i -= traslape
+            if i > traslape :
+                i -= traslape
 
             while cont < tamanno and i < len(texto):
                 frag = frag + texto[i]

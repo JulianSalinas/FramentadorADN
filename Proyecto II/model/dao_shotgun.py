@@ -4,6 +4,7 @@ from util.file import *
 
 # ----------------------------------------------------------------------------------------------------------------------
 
+
 class DAOShotgun(object):
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ class DAOShotgun(object):
         if nombre_archivo is None:
             nombre_archivo = self.archivo_salida
 
-        cadena = "".join([fragmentos + "\n" for fragmento in fragmentos])
+        cadena = "".join([fragmento + "\n" for fragmento in fragmentos])
         save_file(nombre_archivo, cadena)
 
 # ----------------------------------------------------------------------------------------------------------------------
