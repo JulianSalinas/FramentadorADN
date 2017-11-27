@@ -36,4 +36,10 @@ print("Fragmentos con deleciones: \n" + str(fragmentos))
 fragmentos = alg_errores.aplicar_errores(porcentaje=50, funcion=alg_errores.insercion)
 print("Fragmentos con inserciones: \n" + str(fragmentos))
 
+fragmentos = alg_errores.aplicar_errores(porcentaje=50, funcion=alg_errores.inversion)
+print("Fragmentos con inversiones: \n" + str(fragmentos))
+
+fragmentos = alg_errores.aplicar_quimeras(porcentaje=50)
+print("Fragmentos con quimeras: \n" + str(fragmentos))
+
 # ----------------------------------------------------------------------------------------------------------------------

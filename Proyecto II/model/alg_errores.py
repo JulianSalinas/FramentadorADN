@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
+import inspect
 import numpy as np
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -12,6 +13,7 @@ class AlgErrores(object):
     def __init__(self, texto, fragmentos):
         self.texto = texto
         self.fragmentos = np.array(fragmentos)
+        self.errores = []
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -21,7 +23,7 @@ class AlgErrores(object):
         self.fragmentos = self.aplicar_errores(inserciones, self.insercion)
         self.fragmentos = self.aplicar_errores(deleciones, self.delecion)
         self.fragmentos = self.aplicar_errores(inversiones, self.insercion)
-        self.fragmentos = self.aplicar_errores(quimeras, self.quimera)
+        self.fragmentos = self.aplicar_quimeras(quimeras)
 
         return self.fragmentos
 
@@ -37,8 +39,19 @@ class AlgErrores(object):
 
     # ------------------------------------------------------------------------------------------------------------------
 
+    def aplicar_quimeras(self, porcentaje):
+
+        cantidad = int(porcentaje / 100 * len(self.fragmentos))
+        quimeras = [self.quimera() for i in range(cantidad)]
+        self.fragmentos = np.append(self.fragmentos, quimeras)
+
+        return self.fragmentos
+
+    # ------------------------------------------------------------------------------------------------------------------
+
     def sustitucion(self, cadena):
 
+        cadena_antes = cadena
         cadena = list(cadena)
         texto = list(self.texto.replace(" ", ""))
 
@@ -46,12 +59,16 @@ class AlgErrores(object):
         indice_sustitucion = np.random.randint(0, len(cadena))
 
         cadena[indice_sustitucion] = texto[indice_sustituto]
-        return "".join(cadena)
+        cadena_despues = "".join(cadena)
+
+        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def insercion(self, cadena):
 
+        cadena_antes = cadena
         cadena = list(cadena)
         dominio = list(self.texto.replace(" ", ""))
 
@@ -59,28 +76,45 @@ class AlgErrores(object):
         indice_insercion = np.random.randint(0, len(cadena))
 
         cadena.insert(indice_insercion, dominio[indice_insertar])
-        return "".join(cadena)
+        cadena_despues = "".join(cadena)
+
+        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def delecion(self, cadena):
 
+        cadena_antes = cadena
         cadena = np.array(list(cadena))
 
         indice_delecion = np.random.randint(0, len(cadena))
         indices_conservar = np.delete(range(0, len(cadena)), indice_delecion)
 
         cadena = cadena[indices_conservar]
-        return "".join(cadena)
+        cadena_despues = "".join(cadena)
 
-    # ------------------------------------------------------------------------------------------------------------------
-
-    def quimera(self, fragmentos):
-        return self.fragmentos
+        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def inversion(self, cadena):
-        return self.fragmentos
 
-# ---------------------------------------------------------------------------------------------------------------------
+        cadena_despues = cadena[::-1]
+
+        self.errores.append((inspect.stack()[1][3], cadena, cadena_despues))
+        return cadena_despues
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def quimera(self):
+
+        indice = lambda: np.random.randint(0, len(self.fragmentos))
+        elegidos = self.fragmentos[indice()], self.fragmentos[indice()]
+        quimera = elegidos[0] + elegidos[1]
+
+        self.errores.append((inspect.stack()[1][3], elegidos, quimera))
+        return quimera
+
+# ----------------------------------------------------------------------------------------------------------------------
