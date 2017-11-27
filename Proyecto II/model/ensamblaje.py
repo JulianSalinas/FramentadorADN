@@ -36,7 +36,21 @@ def grafoOriginal(frags):
         indiceFrag1+=1
     return grafo
 
+def grafoSimplicado(pesoMin, grafo):
+    for indice in range(0, len(grafo)):
+        print(indice)
+        if (grafo[indice][2] < pesoMin):
+            grafo.pop(indice)
+            print(grafo)
+            indice-=2
+    return grafo
+
 #Forma de llamarlo y probarlo -----------------------------------------------------------------------------------------------
 frags = ['Hola ju', 'a julia', 'julian como ', 'como esta', ' estas?', 'Hola j', 'julian com']
 print("Fragmentos: "+str(frags))
-print("Grafo: "+str(grafoOriginal(frags)))
+grafoOriginal=grafoOriginal(frags)
+print("Grafo original: "+str(grafoOriginal))
+
+#print(grafoSimplicado = grafoSimplicado(3,grafoOriginal))
+
+
