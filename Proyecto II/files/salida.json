@@ -1,0 +1,136 @@
+{
+    "archivo": "../files/entrada.txt",
+    "cantidad_fragmentos": 50,
+    "promedio_tamanho": 6,
+    "desviacion_estandar": 2,
+    "rango_traslape": [
+        1,
+        8
+    ],
+    "probabilidades": {
+        "sustituciones": 7,
+        "inserciones": 12,
+        "deleciones": 8,
+        "inversiones": 9,
+        "quimeras": 9
+    },
+    "errores": [
+        [
+            "sustitucion",
+            "el tex",
+            "ml tex"
+        ],
+        [
+            "sustitucion",
+            " imp",
+            " imt"
+        ],
+        [
+            "sustitucion",
+            "de tex",
+            "dentex"
+        ],
+        [
+            "insercion",
+            "m es si",
+            "m es esi"
+        ],
+        [
+            "insercion",
+            "impleme",
+            "implneme"
+        ],
+        [
+            "insercion",
+            " texto ",
+            " teixto "
+        ],
+        [
+            "insercion",
+            "o de l",
+            "oa de l"
+        ],
+        [
+            "insercion",
+            "s de ",
+            "s des "
+        ],
+        [
+            "insercion",
+            "e texto",
+            "e tex\u00b3to"
+        ],
+        [
+            "delecion",
+            "lemen",
+            "lemn"
+        ],
+        [
+            "delecion",
+            " text",
+            " ext"
+        ],
+        [
+            "delecion",
+            "elleno",
+            "elleo"
+        ],
+        [
+            "delecion",
+            "las imp",
+            "lasimp"
+        ],
+        [
+            "insercion",
+            "rem Ips",
+            "rem tIps"
+        ],
+        [
+            "insercion",
+            "mente ",
+            "menute "
+        ],
+        [
+            "insercion",
+            "e las",
+            "ee las"
+        ],
+        [
+            "insercion",
+            "chivos ",
+            "dchivos "
+        ],
+        [
+            "quimera",
+            [
+                "de rell",
+                "ivos d"
+            ],
+            "de rellivos d"
+        ],
+        [
+            "quimera",
+            [
+                "ente e",
+                "s de t"
+            ],
+            "ente es de t"
+        ],
+        [
+            "quimera",
+            [
+                "o de la",
+                "implnem"
+            ],
+            "o de laimplnem"
+        ],
+        [
+            "quimera",
+            [
+                "o de la",
+                "m es es"
+            ],
+            "o de lam es es"
+        ]
+    ]
+}

@@ -87,7 +87,7 @@ class MainWindow(QMainWindow):
     def btn_fragmentos_clicked(self):
 
         descripcion = self.extraer_informacion_procesamiento()
-        self.fragmentos = self.ejecutar_shotgun(descripcion)
+        self.fragmentos, descripcion = self.ejecutar_shotgun(descripcion)
         self.mostrar_fragmentos(self.fragmentos)
 
         archivo_fragmentos, archivo_descriptivo = self.guardar_archivos_obtenidos(self.fragmentos, descripcion)
@@ -141,9 +141,8 @@ class MainWindow(QMainWindow):
             self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos(archivo)
             grafo = grafoOriginal(self.fragmentos)
 
-            # TODO Arreglar esto, ademas falta un tipo de grafo
-            # if self.radioGrafoSimplicado.isChecked():
-            #     grafo = grafoSimplicado(self.spinTraslapeMinimoGrafo.value(), grafo)
+            if self.radioGrafoSimplicado.isChecked():
+                grafo = grafoSimplificado(self.spinTraslapeMinimoGrafo.value(), grafo)
 
             self.mostrar_grafo(grafo)
             self.statusbar.setText("Grafo generado correctamente")
@@ -157,13 +156,8 @@ class MainWindow(QMainWindow):
 
         archivo = self.txtFragmentos.text()
         if archivo is not "":
-
             self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos(archivo)
-
-            # TODO Colocar aquie funcion que retorne un texto ensamblado
-
-            self.statusbar.setText("Fragmentos ensamblados correctamente")
-
+            self.statusbar.setText("Funcion sin implementar")
         else:
             self.statusbar.setText("Debe ingresar un archivo con fragmentos")
 
@@ -183,9 +177,10 @@ class MainWindow(QMainWindow):
         fragmentos = alg_shotgun.generar_fragmentos(texto)
 
         alg_errores = AlgErrores(texto, fragmentos)
-        fragmentos = alg_errores.agregar_errores(params["errores"])
+        fragmentos = alg_errores.agregar_errores(params["probabilidades"])
 
-        return fragmentos
+        params["errores"] = alg_errores.errores
+        return fragmentos, params
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -197,7 +192,7 @@ class MainWindow(QMainWindow):
             "promedio_tamanho": self.spinLongitud.value(),
             "desviacion_estandar": self.spinDesviacion.value(),
             "rango_traslape": (self.spinTraslapeMinimo.value(), self.spinTraslapeMaximo.value()),
-            "errores": self.extraer_probabilidades_errores()
+            "probabilidades": self.extraer_probabilidades_errores()
         }
 
     # ------------------------------------------------------------------------------------------------------------------

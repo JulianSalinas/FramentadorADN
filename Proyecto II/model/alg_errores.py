@@ -61,7 +61,7 @@ class AlgErrores(object):
         cadena[indice_sustitucion] = texto[indice_sustituto]
         cadena_despues = "".join(cadena)
 
-        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        self.errores.append(("sustitucion", cadena_antes, cadena_despues))
         return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ class AlgErrores(object):
         cadena.insert(indice_insercion, dominio[indice_insertar])
         cadena_despues = "".join(cadena)
 
-        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        self.errores.append(("insercion", cadena_antes, cadena_despues))
         return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ class AlgErrores(object):
         cadena = cadena[indices_conservar]
         cadena_despues = "".join(cadena)
 
-        self.errores.append((inspect.stack()[1][3], cadena_antes, cadena_despues))
+        self.errores.append(("delecion", cadena_antes, cadena_despues))
         return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ class AlgErrores(object):
 
         cadena_despues = cadena[::-1]
 
-        self.errores.append((inspect.stack()[1][3], cadena, cadena_despues))
+        self.errores.append(("inversion", cadena, cadena_despues))
         return cadena_despues
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ class AlgErrores(object):
         elegidos = self.fragmentos[indice()], self.fragmentos[indice()]
         quimera = elegidos[0] + elegidos[1]
 
-        self.errores.append((inspect.stack()[1][3], elegidos, quimera))
+        self.errores.append(("quimera", elegidos, quimera))
         return quimera
 
 # ----------------------------------------------------------------------------------------------------------------------

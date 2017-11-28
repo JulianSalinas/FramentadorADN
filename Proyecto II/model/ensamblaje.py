@@ -47,12 +47,3 @@ def grafoSimplificado(pesoMin, grafo):
         tamanno = len(grafo)
         indice+=1
     return grafo
-
-# Forma de llamarlo y probarlo
-frags = ['Hola ju', 'a julia', 'julian como ', 'como esta', ' estas?', 'Hola j', 'julian com']
-#print("Fragmentos: "+str(frags))
-grafoOriginal=grafoOriginal(frags)
-print("Grafo original: \n"+str(grafoOriginal))
-#print("valor: "+ str(grafoOriginal[3][2]))
-#grafo=[['Hola ju', 'a julia', 4], ['Hola ju', 'julian como ', 2], ['Hola ju', 'julian com', 2], ['a julia', 'julian como ', 5], ['a julia', 'julian com', 5], ['julian como ', 'como esta', 5]]
-#print(grafoSimplificado(5,grafoOriginal))
