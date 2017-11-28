@@ -54,11 +54,25 @@ class MainWindow(QMainWindow):
         self.spinTraslapeMinimo.setValue(1)
         self.spinTraslapeMaximo.setValue(8)
 
+        dao_shotgun = DAOShotgun()
+        fragmentos = dao_shotgun.abrir_archivo_fragmentos("../files/salida.txt")
+        self.mostrar_fragmentos(fragmentos)
+
     # ------------------------------------------------------------------------------------------------------------------
 
-    # TODO Implementar aqui modo batch
     def btn_coleccion_clicked(self):
-        self.statusbar.setText("Colección de archivos de fragmentos generada")
+
+        descripcion = self.extraer_informacion_procesamiento()
+
+        try:
+            cantidad = self.spinCantColecciones.value()
+            for i in range(cantidad):
+                fragmentos = self.ejecutar_shotgun(descripcion)
+                self.guardar_archivos_obtenidos(fragmentos, descripcion, consecutivo=i+1)
+            os.system("explorer " + os.path.abspath(self.txtDestino.text()))
+
+        except TypeError:
+            self.statusbar.setText("Error al ingresar la cantidad")
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -99,20 +113,31 @@ class MainWindow(QMainWindow):
         open_dialog = QFileDialog()
         filename = open_dialog.getOpenFileName(self, "Abrir archivo", "../files")[0]
         if filename is not "":
+
             self.txtFragmentos.setText(filename)
             self.statusbar.setText("Los fragmentos de " + os.path.split(filename)[1] + " han sido cargados")
 
+            dao_shotgun = DAOShotgun()
+            fragmentos = dao_shotgun.abrir_archivo_fragmentos(filename)
+            self.mostrar_fragmentos(fragmentos)
+
     # ------------------------------------------------------------------------------------------------------------------
+
     def btn_generar_grafo_clicked(self):
+
         archivo = self.txtFragmentos.text()
         if archivo is not "":
+
             dao_shotgun = DAOShotgun()
             fragmentos = dao_shotgun.abrir_archivo_fragmentos(archivo)
             grafo = grafoOriginal(fragmentos)
-            if self.radioGrafoSimplicado.isChecked():
-                grafo = grafoSimplicado(self.spinTraslapeMinimoGrafo.value(), grafo)
+
+            # if self.radioGrafoSimplicado.isChecked():
+            #     grafo = grafoSimplicado(self.spinTraslapeMinimoGrafo.value(), grafo)
+
             self.mostrar_grafo(grafo)
             self.statusbar.setText("Grafo generado correctamente")
+
         else:
             self.statusbar.setText("Debe ingresar un archivo con fragmentos")
 
@@ -165,10 +190,14 @@ class MainWindow(QMainWindow):
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    def guardar_archivos_obtenidos(self, fragmentos, descripcion):
+    def guardar_archivos_obtenidos(self, fragmentos, descripcion, consecutivo=0):
 
-        archivo_fragmentos = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".txt")
-        archivo_descriptivo = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".json")
+        if consecutivo is 0:
+            archivo_fragmentos = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".txt")
+            archivo_descriptivo = os.path.join(self.txtDestino.text(), self.txtNombre.text() + ".json")
+        else:
+            archivo_fragmentos = os.path.join(self.txtDestino.text(), self.txtNombre.text() + str(consecutivo) + ".txt")
+            archivo_descriptivo = os.path.join(self.txtDestino.text(), self.txtNombre.text() + str(consecutivo) + ".json")
 
         dao_shotgun = DAOShotgun()
         dao_shotgun.guardar_archivo_fragmentos(fragmentos, archivo_fragmentos)
@@ -186,10 +215,11 @@ class MainWindow(QMainWindow):
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    # TODO Podria implementarlo en un block de notas, no en una tabla
     def mostrar_fragmentos(self, fragmentos):
 
-        return None
+        self.tabGrafo.setRowCount(len(fragmentos))
+        for i in range(0, len(fragmentos)):
+            self.tabFragmentos.setItem(i, 0, QTableWidgetItem(fragmentos[i]))
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -199,8 +229,7 @@ class MainWindow(QMainWindow):
         grafo = np.matrix(grafo)
         for i in range(0, grafo.shape[0]):
             for j in range(0, grafo.shape[1]):
-                print(grafo[i, j])
-                self.tabGrafo.setItem(i, j, QTableWidgetItem(grafo[i,j]))
+                self.tabGrafo.setItem(i, j, QTableWidgetItem(grafo[i, j]))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
