@@ -20,8 +20,12 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------------------------------------------------------
 
     def __init__(self):
+
         super(MainWindow, self).__init__()
         uic.loadUi("qt_ui.ui", self)
+
+        self.dao_shotgun = DAOShotgun()
+        self.fragmentos = []
 
         self.show()
         self.assign_functions()
@@ -31,12 +35,19 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------------------------------------------------------
 
     def assign_functions(self):
+
         self.btnColeccion.clicked.connect(self.btn_coleccion_clicked)
         self.btnFragmentos.clicked.connect(self.btn_fragmentos_clicked)
+
         self.btnAbrirFuente.clicked.connect(self.btn_abrir_fuente_clicked)
         self.btnAbrirDestino.clicked.connect(self.btn_abrir_destino_clicked)
         self.btnAbrirFragmentos.clicked.connect(self.btn_abrir_fragmentos_clicked)
+
         self.btnGenerarGrafo.clicked.connect(self.btn_generar_grafo_clicked)
+        self.btnEnsamblar.clicked.connect(self.btn_ensamblar_clicked)
+
+        self.radioVisualizarAlfabeticamente.toggled.connect(self.on_radio_visualizar_toggled)
+        self.radioVisualizarTamanho.toggled.connect(self.on_radio_visualizar_toggled)
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -54,35 +65,33 @@ class MainWindow(QMainWindow):
         self.spinTraslapeMinimo.setValue(1)
         self.spinTraslapeMaximo.setValue(8)
 
-        dao_shotgun = DAOShotgun()
-        fragmentos = dao_shotgun.abrir_archivo_fragmentos("../files/salida.txt")
-        self.mostrar_fragmentos(fragmentos)
+        if os.path.exists("../files/salida.txt"):
+            self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos("../files/salida.txt")
+            self.mostrar_fragmentos(self.fragmentos)
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def btn_coleccion_clicked(self):
 
         descripcion = self.extraer_informacion_procesamiento()
+        cantidad = self.spinCantColecciones.value()
 
-        try:
-            cantidad = self.spinCantColecciones.value()
-            for i in range(cantidad):
-                fragmentos = self.ejecutar_shotgun(descripcion)
-                self.guardar_archivos_obtenidos(fragmentos, descripcion, consecutivo=i+1)
-            os.system("explorer " + os.path.abspath(self.txtDestino.text()))
+        for i in range(cantidad):
+            fragmentos = self.ejecutar_shotgun(descripcion)
+            self.guardar_archivos_obtenidos(fragmentos, descripcion, consecutivo=i+1)
 
-        except TypeError:
-            self.statusbar.setText("Error al ingresar la cantidad")
+        os.system("explorer " + os.path.abspath(self.txtDestino.text()))
 
     # ------------------------------------------------------------------------------------------------------------------
 
     def btn_fragmentos_clicked(self):
 
         descripcion = self.extraer_informacion_procesamiento()
-        fragmentos = self.ejecutar_shotgun(descripcion)
+        self.fragmentos = self.ejecutar_shotgun(descripcion)
+        self.mostrar_fragmentos(self.fragmentos)
 
-        archivo_fragmentos, archivo_descriptivo = self.guardar_archivos_obtenidos(fragmentos, descripcion)
-        self.mostrar_archivos_obtenidos(archivo_fragmentos, archivo_fragmentos)
+        archivo_fragmentos, archivo_descriptivo = self.guardar_archivos_obtenidos(self.fragmentos, descripcion)
+        self.mostrar_archivos_obtenidos(archivo_fragmentos, archivo_descriptivo)
 
         self.statusbar.setText("Archivo de fragmentos generado como " + archivo_fragmentos)
 
@@ -92,6 +101,7 @@ class MainWindow(QMainWindow):
 
         open_dialog = QFileDialog()
         filename = open_dialog.getOpenFileName(self, "Abrir archivo", "../files")[0]
+
         if filename is not "":
             self.statusbar.setText("Archivo seleccionado: " + os.path.split(filename)[1])
             self.txtFuente.setText(filename)
@@ -102,6 +112,7 @@ class MainWindow(QMainWindow):
 
         open_dialog = QFileDialog()
         dirname = str(open_dialog.getExistingDirectory(self, "Abrir directorio"))
+
         if dirname is not "":
             self.statusbar.setText("Directorio seleccionado: " + os.path.split(dirname)[1])
             self.txtDestino.setText(dirname)
@@ -117,9 +128,8 @@ class MainWindow(QMainWindow):
             self.txtFragmentos.setText(filename)
             self.statusbar.setText("Los fragmentos de " + os.path.split(filename)[1] + " han sido cargados")
 
-            dao_shotgun = DAOShotgun()
-            fragmentos = dao_shotgun.abrir_archivo_fragmentos(filename)
-            self.mostrar_fragmentos(fragmentos)
+            self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos(filename)
+            self.mostrar_fragmentos(self.fragmentos)
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -128,10 +138,10 @@ class MainWindow(QMainWindow):
         archivo = self.txtFragmentos.text()
         if archivo is not "":
 
-            dao_shotgun = DAOShotgun()
-            fragmentos = dao_shotgun.abrir_archivo_fragmentos(archivo)
-            grafo = grafoOriginal(fragmentos)
+            self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos(archivo)
+            grafo = grafoOriginal(self.fragmentos)
 
+            # TODO Arreglar esto, ademas falta un tipo de grafo
             # if self.radioGrafoSimplicado.isChecked():
             #     grafo = grafoSimplicado(self.spinTraslapeMinimoGrafo.value(), grafo)
 
@@ -140,6 +150,27 @@ class MainWindow(QMainWindow):
 
         else:
             self.statusbar.setText("Debe ingresar un archivo con fragmentos")
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def btn_ensamblar_clicked(self):
+
+        archivo = self.txtFragmentos.text()
+        if archivo is not "":
+
+            self.fragmentos = self.dao_shotgun.abrir_archivo_fragmentos(archivo)
+
+            # TODO Colocar aquie funcion que retorne un texto ensamblado
+
+            self.statusbar.setText("Fragmentos ensamblados correctamente")
+
+        else:
+            self.statusbar.setText("Debe ingresar un archivo con fragmentos")
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def on_radio_visualizar_toggled(self):
+        self.mostrar_fragmentos(self.fragmentos)
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -155,13 +186,6 @@ class MainWindow(QMainWindow):
         fragmentos = alg_errores.agregar_errores(params["errores"])
 
         return fragmentos
-
-    # ------------------------------------------------------------------------------------------------------------------
-
-    # TODO Agregar boton para ejecutar el ensamblaje a partir del grafo
-    def ejecutar_ensamblaje(self, params):
-
-        return None
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -216,6 +240,11 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------------------------------------------------------
 
     def mostrar_fragmentos(self, fragmentos):
+
+        if self.radioVisualizarAlfabeticamente.isChecked():
+            fragmentos.sort()
+        else:
+            fragmentos.sort(key=lambda x: len(x), reverse=True)
 
         self.tabGrafo.setRowCount(len(fragmentos))
         for i in range(0, len(fragmentos)):

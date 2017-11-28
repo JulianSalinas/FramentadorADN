@@ -872,7 +872,7 @@
         <set>Qt::ImhFormattedNumbersOnly</set>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
@@ -2275,6 +2275,9 @@
                   </disabled>
                  </palette>
                 </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
                </widget>
               </item>
               <item row="2" column="2">
@@ -2693,6 +2696,9 @@
                    </colorrole>
                   </disabled>
                  </palette>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
                 </property>
                </widget>
               </item>
@@ -3163,6 +3169,9 @@
                    </colorrole>
                   </disabled>
                  </palette>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
                 </property>
                </widget>
               </item>
@@ -6456,6 +6465,9 @@
                     </disabled>
                    </palette>
                   </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
                  </widget>
                 </item>
                 <item row="2" column="0">
@@ -6888,6 +6900,9 @@
                      </colorrole>
                     </disabled>
                    </palette>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
                   </property>
                  </widget>
                 </item>
@@ -7822,9 +7837,9 @@
           <widget class="QWidget" name="">
            <property name="geometry">
             <rect>
-             <x>550</x>
+             <x>540</x>
              <y>10</y>
-             <width>191</width>
+             <width>201</width>
              <height>201</height>
             </rect>
            </property>
@@ -7905,7 +7920,7 @@
             <rect>
              <x>170</x>
              <y>10</y>
-             <width>371</width>
+             <width>351</width>
              <height>431</height>
             </rect>
            </property>
@@ -8102,11 +8117,38 @@
             </item>
            </layout>
           </widget>
-         </widget>
-         <widget class="QWidget" name="tab_10">
-          <attribute name="title">
-           <string>Tab 2</string>
-          </attribute>
+          <widget class="QWidget" name="">
+           <property name="geometry">
+            <rect>
+             <x>540</x>
+             <y>230</y>
+             <width>207</width>
+             <height>42</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QRadioButton" name="radioVisualizarTamanho">
+              <property name="text">
+               <string>Visualizar fragmentos por tamaño</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioVisualizarAlfabeticamente">
+              <property name="text">
+               <string>Visualizar fragmentos alfabéticamente</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </widget>
        </widget>
