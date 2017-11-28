@@ -8,16 +8,17 @@ from model.dao_shotgun import *
 # Abrir el archivo, sustituir saltos de linea por espacios
 
 dao_shotgun = DAOShotgun()
-texto = dao_shotgun.abrir_archivo_fragmentos(nombre_archivo="../files/entrada.txt")
+texto = dao_shotgun.abrir_archivo_entrada(nombre_archivo="../files/entrada.txt")
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Generacion de fragmentos
 
-alg_shotgun = AlgShotgun()\
-    .set_cantidad_fragmentos(5)\
-    .set_promedio_tamanho(8)\
-    .set_desviacion_estandar(4)\
-    .set_rango_traslape((1,3))
+alg_shotgun = AlgShotgun({
+    "cantidad_fragmentos": 5,
+    "promedio_tamanho": 8,
+    "desviacion_estandar": 4,
+    "rango_traslape": (1, 3)
+})
 
 fragmentos = alg_shotgun.generar_fragmentos(texto)
 print("Fragmentos sin errores: \n" + str(fragmentos))

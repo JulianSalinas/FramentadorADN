@@ -1,3 +1,4 @@
+import numpy as np
 
 def obtenerSubcadena(indF1, frag1, indF2, frag2):
     subCadena = ""
@@ -45,12 +46,11 @@ def grafoSimplicado(pesoMin, grafo):
             indice-=2
     return grafo
 
-#Forma de llamarlo y probarlo -----------------------------------------------------------------------------------------------
-frags = ['Hola ju', 'a julia', 'julian como ', 'como esta', ' estas?', 'Hola j', 'julian com']
-print("Fragmentos: "+str(frags))
-grafoOriginal=grafoOriginal(frags)
-print("Grafo original: "+str(grafoOriginal))
-
-#print(grafoSimplicado = grafoSimplicado(3,grafoOriginal))
+# Forma de llamarlo y probarlo
+# frags = ['Hola ju', 'a julia', 'julian como ', 'como esta', ' estas?', 'Hola j', 'julian com']
+# print("Fragmentos: "+str(frags))
+# grafoOriginal=np.matrix(grafoOriginal(frags))
+# print("Grafo original: \n"+str(grafoOriginal))
+# print(grafoSimplicado = grafoSimplicado(3,grafoOriginal))
 
 

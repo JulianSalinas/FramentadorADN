@@ -16,9 +16,15 @@ class DAOShotgun(object):
 
     # ------------------------------------------------------------------------------------------------------------------
 
-    def abrir_archivo_fragmentos(self, nombre_archivo):
+    def abrir_archivo_entrada(self, nombre_archivo):
         cadena = open_file(nombre_archivo)
         return cadena.replace("\n", " ")
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def abrir_archivo_fragmentos(self, nombre_archivo):
+        cadena = open_file(nombre_archivo)
+        return cadena.split("\n")
 
     # ------------------------------------------------------------------------------------------------------------------
 

@@ -1,7 +1,3 @@
-
-crear_grafo()
-[["string", "string2", 2], ("") .. .]
-
 Generador de fragmentos:
 
     - recibir archivo de texto o arhivo descriptivo
