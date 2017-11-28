@@ -1,0 +1,349 @@
+{
+    "archivo": "../files/entrada.txt",
+    "cantidad_fragmentos": 50,
+    "promedio_tamanho": 6,
+    "desviacion_estandar": 2,
+    "rango_traslape": [
+        1,
+        8
+    ],
+    "probabilidades": {
+        "sustituciones": 23,
+        "inserciones": 28,
+        "deleciones": 38,
+        "inversiones": 12,
+        "quimeras": 21
+    },
+    "errores": [
+        [
+            "sustitucion",
+            "rem Ips",
+            "rem Ips"
+        ],
+        [
+            "sustitucion",
+            "sum es",
+            "smm es"
+        ],
+        [
+            "sustitucion",
+            " es si",
+            " ,s si"
+        ],
+        [
+            "sustitucion",
+            "nte el ",
+            "nts el "
+        ],
+        [
+            "sustitucion",
+            "nte el ",
+            "nte elr"
+        ],
+        [
+            "sustitucion",
+            "texto ",
+            "oexto "
+        ],
+        [
+            "sustitucion",
+            "e las",
+            "e lao"
+        ],
+        [
+            "sustitucion",
+            "as im",
+            "assim"
+        ],
+        [
+            "sustitucion",
+            "s impre",
+            "s impse"
+        ],
+        [
+            "sustitucion",
+            "y ar",
+            "y or"
+        ],
+        [
+            "sustitucion",
+            "vos d",
+            "eos d"
+        ],
+        [
+            "insercion",
+            " Ipsu",
+            "\u00b3 Ipsu"
+        ],
+        [
+            "insercion",
+            "em I",
+            "emo I"
+        ],
+        [
+            "insercion",
+            "plemen",
+            "pllemen"
+        ],
+        [
+            "insercion",
+            "nts el ",
+            "ntjs el "
+        ],
+        [
+            "insercion",
+            "l te",
+            "l tne"
+        ],
+        [
+            "insercion",
+            "el t",
+            "el ot"
+        ],
+        [
+            "insercion",
+            "nte elr",
+            "pnte elr"
+        ],
+        [
+            "insercion",
+            "l tex",
+            "l terx"
+        ],
+        [
+            "insercion",
+            "to de",
+            "to sde"
+        ],
+        [
+            "insercion",
+            "o de ",
+            "o dre "
+        ],
+        [
+            "insercion",
+            "e lao",
+            "se lao"
+        ],
+        [
+            "insercion",
+            "entas y",
+            "rentas y"
+        ],
+        [
+            "insercion",
+            "e te",
+            "ee te"
+        ],
+        [
+            "insercion",
+            " texto",
+            " teoxto"
+        ],
+        [
+            "delecion",
+            "Ipsu",
+            "Ipu"
+        ],
+        [
+            "delecion",
+            "emo I",
+            "emo "
+        ],
+        [
+            "delecion",
+            "rem Ips",
+            "re Ips"
+        ],
+        [
+            "delecion",
+            "plement",
+            "plment"
+        ],
+        [
+            "delecion",
+            "ntjs el",
+            "ntjsel"
+        ],
+        [
+            "delecion",
+            "l te",
+            "l t"
+        ],
+        [
+            "delecion",
+            "el ot",
+            "el t"
+        ],
+        [
+            "delecion",
+            "e el ",
+            "e el"
+        ],
+        [
+            "delecion",
+            "te el t",
+            "e el t"
+        ],
+        [
+            "delecion",
+            "l terx",
+            "lterx"
+        ],
+        [
+            "delecion",
+            "texto ",
+            "texo "
+        ],
+        [
+            "delecion",
+            "to sde",
+            "t sde"
+        ],
+        [
+            "delecion",
+            "o dre ",
+            "o de "
+        ],
+        [
+            "delecion",
+            "elleno ",
+            "eleno "
+        ],
+        [
+            "delecion",
+            "no de",
+            "o de"
+        ],
+        [
+            "delecion",
+            "se lao",
+            "e lao"
+        ],
+        [
+            "delecion",
+            "rentas ",
+            "entas "
+        ],
+        [
+            "delecion",
+            "s y a",
+            "s y "
+        ],
+        [
+            "delecion",
+            " de ",
+            " e "
+        ],
+        [
+            "insercion",
+            "Lorem ",
+            "Loream "
+        ],
+        [
+            "insercion",
+            " el tex",
+            " el teex"
+        ],
+        [
+            "insercion",
+            "o de ",
+            "om de "
+        ],
+        [
+            "insercion",
+            " rellen",
+            " ruellen"
+        ],
+        [
+            "insercion",
+            "y or",
+            "ey or"
+        ],
+        [
+            "insercion",
+            " arc",
+            " tarc"
+        ],
+        [
+            "quimera",
+            [
+                "re Ips",
+                "eleno "
+            ],
+            "re Ipseleno "
+        ],
+        [
+            "quimera",
+            [
+                "el t",
+                "\u00b3 Ipsu"
+            ],
+            "el t\u00b3 Ipsu"
+        ],
+        [
+            "quimera",
+            [
+                "ivos d",
+                "s impse"
+            ],
+            "ivos ds impse"
+        ],
+        [
+            "quimera",
+            [
+                "e lao",
+                " el "
+            ],
+            "e lao el "
+        ],
+        [
+            "quimera",
+            [
+                "entas ",
+                "ivos d"
+            ],
+            "entas ivos d"
+        ],
+        [
+            "quimera",
+            [
+                "re Ips",
+                "Loream "
+            ],
+            "re IpsLoream "
+        ],
+        [
+            "quimera",
+            [
+                "s impse",
+                " el tee"
+            ],
+            "s impse el tee"
+        ],
+        [
+            "quimera",
+            [
+                " teoxto",
+                " text"
+            ],
+            " teoxto text"
+        ],
+        [
+            "quimera",
+            [
+                " ruelle",
+                "de l"
+            ],
+            " ruellede l"
+        ],
+        [
+            "quimera",
+            [
+                "\u00b3 Ipsu",
+                "\u00b3 Ipsu"
+            ],
+            "\u00b3 Ipsu\u00b3 Ipsu"
+        ]
+    ]
+}

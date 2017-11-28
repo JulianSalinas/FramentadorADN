@@ -1,0 +1,349 @@
+{
+    "archivo": "../files/entrada.txt",
+    "cantidad_fragmentos": 50,
+    "promedio_tamanho": 6,
+    "desviacion_estandar": 2,
+    "rango_traslape": [
+        1,
+        8
+    ],
+    "probabilidades": {
+        "sustituciones": 23,
+        "inserciones": 28,
+        "deleciones": 38,
+        "inversiones": 12,
+        "quimeras": 21
+    },
+    "errores": [
+        [
+            "sustitucion",
+            "ente ",
+            "vnte "
+        ],
+        [
+            "sustitucion",
+            "el text",
+            "elttext"
+        ],
+        [
+            "sustitucion",
+            " de rel",
+            "mde rel"
+        ],
+        [
+            "sustitucion",
+            "llen",
+            "alen"
+        ],
+        [
+            "sustitucion",
+            " relle",
+            "nrelle"
+        ],
+        [
+            "sustitucion",
+            "de l",
+            "de\u00c3l"
+        ],
+        [
+            "sustitucion",
+            "de las ",
+            "de aas "
+        ],
+        [
+            "sustitucion",
+            "ntas ",
+            "ntass"
+        ],
+        [
+            "sustitucion",
+            "s de ",
+            "s de "
+        ],
+        [
+            "sustitucion",
+            "ivos d",
+            "ivosed"
+        ],
+        [
+            "sustitucion",
+            "orem",
+            "oreP"
+        ],
+        [
+            "insercion",
+            "psum",
+            "prsum"
+        ],
+        [
+            "insercion",
+            "m es s",
+            "m es ds"
+        ],
+        [
+            "insercion",
+            "elttext",
+            "relttext"
+        ],
+        [
+            "insercion",
+            "nrelle",
+            "nrelele"
+        ],
+        [
+            "insercion",
+            "o de ",
+            "o de\u00b3 "
+        ],
+        [
+            "insercion",
+            "de aas ",
+            "de aas\u00b1 "
+        ],
+        [
+            "insercion",
+            "as impr",
+            "as simpr"
+        ],
+        [
+            "insercion",
+            " impr",
+            " iempr"
+        ],
+        [
+            "insercion",
+            "s im",
+            "is im"
+        ],
+        [
+            "insercion",
+            "os d",
+            "ors d"
+        ],
+        [
+            "insercion",
+            "s de ",
+            "es de "
+        ],
+        [
+            "insercion",
+            "ivosed",
+            "ivosced"
+        ],
+        [
+            "insercion",
+            "de t",
+            "dem t"
+        ],
+        [
+            "insercion",
+            "em Ip",
+            "eme Ip"
+        ],
+        [
+            "delecion",
+            " simpl",
+            " impl"
+        ],
+        [
+            "delecion",
+            "leme",
+            "lem"
+        ],
+        [
+            "delecion",
+            "te el",
+            "te e"
+        ],
+        [
+            "delecion",
+            "relttex",
+            "reltte"
+        ],
+        [
+            "delecion",
+            "texto d",
+            "texto "
+        ],
+        [
+            "delecion",
+            " rell",
+            " ell"
+        ],
+        [
+            "delecion",
+            "rellen",
+            "relln"
+        ],
+        [
+            "delecion",
+            " relle",
+            " rele"
+        ],
+        [
+            "delecion",
+            "ellen",
+            "elen"
+        ],
+        [
+            "delecion",
+            "llen",
+            "len"
+        ],
+        [
+            "delecion",
+            "no de",
+            "no e"
+        ],
+        [
+            "delecion",
+            " de l",
+            " d l"
+        ],
+        [
+            "delecion",
+            "de\u00c3l",
+            "del"
+        ],
+        [
+            "delecion",
+            "de las ",
+            "d las "
+        ],
+        [
+            "delecion",
+            "de aas\u00b1",
+            "de aas"
+        ],
+        [
+            "delecion",
+            "is im",
+            "is i"
+        ],
+        [
+            "delecion",
+            " de te",
+            " de t"
+        ],
+        [
+            "delecion",
+            "o. Lo",
+            "o Lo"
+        ],
+        [
+            "delecion",
+            "oreP",
+            "orP"
+        ],
+        [
+            "insercion",
+            "Lorem I",
+            "Loprem I"
+        ],
+        [
+            "insercion",
+            "um es ",
+            "um esq "
+        ],
+        [
+            "insercion",
+            " rele",
+            "e rele"
+        ],
+        [
+            "insercion",
+            "len",
+            "leen"
+        ],
+        [
+            "insercion",
+            "o de\u00b3 ",
+            "o de\u00b3e "
+        ],
+        [
+            "insercion",
+            "ors d",
+            "ors ld"
+        ],
+        [
+            "quimera",
+            [
+                "ivosced",
+                "dem t"
+            ],
+            "ivosceddem t"
+        ],
+        [
+            "quimera",
+            [
+                " ell",
+                " impre"
+            ],
+            " ell impre"
+        ],
+        [
+            "quimera",
+            [
+                "eme Ip",
+                "o de\u00b3e "
+            ],
+            "eme Ipo de\u00b3e "
+        ],
+        [
+            "quimera",
+            [
+                " de t",
+                "dem t"
+            ],
+            " de tdem t"
+        ],
+        [
+            "quimera",
+            [
+                "elen",
+                "um esq "
+            ],
+            "elenum esq "
+        ],
+        [
+            "quimera",
+            [
+                "no e",
+                "vos de"
+            ],
+            "no evos de"
+        ],
+        [
+            "quimera",
+            [
+                "nrelele",
+                "o de\u00b3e "
+            ],
+            "nreleleo de\u00b3e "
+        ],
+        [
+            "quimera",
+            [
+                "de aas",
+                "de aas"
+            ],
+            "de aasde aas"
+        ],
+        [
+            "quimera",
+            [
+                "eme Ip",
+                "relle"
+            ],
+            "eme Iprelle"
+        ],
+        [
+            "quimera",
+            [
+                "relln",
+                "m es ds"
+            ],
+            "rellnm es ds"
+        ]
+    ]
+}

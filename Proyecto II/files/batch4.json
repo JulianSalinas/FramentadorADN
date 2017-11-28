@@ -1,0 +1,349 @@
+{
+    "archivo": "../files/entrada.txt",
+    "cantidad_fragmentos": 50,
+    "promedio_tamanho": 6,
+    "desviacion_estandar": 2,
+    "rango_traslape": [
+        1,
+        8
+    ],
+    "probabilidades": {
+        "sustituciones": 23,
+        "inserciones": 28,
+        "deleciones": 38,
+        "inversiones": 12,
+        "quimeras": 21
+    },
+    "errores": [
+        [
+            "sustitucion",
+            "Lore",
+            "Lorn"
+        ],
+        [
+            "sustitucion",
+            "m Ipsu",
+            "m Ipju"
+        ],
+        [
+            "sustitucion",
+            "leno de",
+            "l0no de"
+        ],
+        [
+            "sustitucion",
+            "las imp",
+            "las imp"
+        ],
+        [
+            "sustitucion",
+            "ntas ",
+            "ntash"
+        ],
+        [
+            "sustitucion",
+            "y archi",
+            "y arcri"
+        ],
+        [
+            "sustitucion",
+            "vos de ",
+            "aos de "
+        ],
+        [
+            "sustitucion",
+            "rchivos",
+            "rchivot"
+        ],
+        [
+            "sustitucion",
+            "ivos d",
+            "ivosId"
+        ],
+        [
+            "sustitucion",
+            "xto. ",
+            "xto.("
+        ],
+        [
+            "sustitucion",
+            "to. Lor",
+            "tot Lor"
+        ],
+        [
+            "insercion",
+            "sum es ",
+            "sum .es "
+        ],
+        [
+            "insercion",
+            "exto d",
+            "eexto d"
+        ],
+        [
+            "insercion",
+            "llen",
+            "l\u00c3len"
+        ],
+        [
+            "insercion",
+            " rel",
+            "c rel"
+        ],
+        [
+            "insercion",
+            " de las",
+            " dde las"
+        ],
+        [
+            "insercion",
+            " imp",
+            " imsp"
+        ],
+        [
+            "insercion",
+            " impre",
+            " iempre"
+        ],
+        [
+            "insercion",
+            "as y",
+            "das y"
+        ],
+        [
+            "insercion",
+            " archi",
+            " archsi"
+        ],
+        [
+            "insercion",
+            "y arcri",
+            "ly arcri"
+        ],
+        [
+            "insercion",
+            "ivosId",
+            "ievosId"
+        ],
+        [
+            "insercion",
+            "ivos ",
+            "ivo\u00b3s "
+        ],
+        [
+            "insercion",
+            "vos de",
+            "vos d\u00c3e"
+        ],
+        [
+            "insercion",
+            " de te",
+            " \u00b3de te"
+        ],
+        [
+            "delecion",
+            "mente ",
+            "ente "
+        ],
+        [
+            "delecion",
+            "nte el ",
+            "nte el"
+        ],
+        [
+            "delecion",
+            " el tex",
+            " el ex"
+        ],
+        [
+            "delecion",
+            "l text",
+            "l tex"
+        ],
+        [
+            "delecion",
+            "l texto",
+            "l texo"
+        ],
+        [
+            "delecion",
+            "eexto d",
+            "exto d"
+        ],
+        [
+            "delecion",
+            "o de re",
+            "o de e"
+        ],
+        [
+            "delecion",
+            "rellen",
+            "relen"
+        ],
+        [
+            "delecion",
+            " imsp",
+            " msp"
+        ],
+        [
+            "delecion",
+            " y ar",
+            " y r"
+        ],
+        [
+            "delecion",
+            "ly arcr",
+            "lyarcr"
+        ],
+        [
+            "delecion",
+            "ivos",
+            "vos"
+        ],
+        [
+            "delecion",
+            "ievosId",
+            "ievosd"
+        ],
+        [
+            "delecion",
+            "vos d\u00c3e",
+            "vos de"
+        ],
+        [
+            "delecion",
+            "s de",
+            " de"
+        ],
+        [
+            "delecion",
+            " de t",
+            " e t"
+        ],
+        [
+            "delecion",
+            "e text",
+            " text"
+        ],
+        [
+            "delecion",
+            "xto. Lo",
+            "xto. L"
+        ],
+        [
+            "delecion",
+            "tot Lor",
+            "to Lor"
+        ],
+        [
+            "insercion",
+            "nte el",
+            "nte eel"
+        ],
+        [
+            "insercion",
+            "e las",
+            "ce las"
+        ],
+        [
+            "insercion",
+            " dde la",
+            " edde la"
+        ],
+        [
+            "insercion",
+            " archsi",
+            " arlchsi"
+        ],
+        [
+            "insercion",
+            "vos de",
+            "vos sde"
+        ],
+        [
+            "insercion",
+            "xto.(",
+            "exto.("
+        ],
+        [
+            "quimera",
+            [
+                "archivo",
+                " edde l"
+            ],
+            "archivo edde l"
+        ],
+        [
+            "quimera",
+            [
+                " text",
+                "vos"
+            ],
+            " textvos"
+        ],
+        [
+            "quimera",
+            [
+                " Ipsum",
+                " e t"
+            ],
+            " Ipsum e t"
+        ],
+        [
+            "quimera",
+            [
+                " text",
+                "o de e"
+            ],
+            " texto de e"
+        ],
+        [
+            "quimera",
+            [
+                "l texo",
+                "plement"
+            ],
+            "l texoplement"
+        ],
+        [
+            "quimera",
+            [
+                " \u00b3de te",
+                "l0no de"
+            ],
+            " \u00b3de tel0no de"
+        ],
+        [
+            "quimera",
+            [
+                " \u00b3de te",
+                "vos de "
+            ],
+            " \u00b3de tevos de "
+        ],
+        [
+            "quimera",
+            [
+                " el ex",
+                "rchivo"
+            ],
+            " el exrchivo"
+        ],
+        [
+            "quimera",
+            [
+                "l texo",
+                " iempre"
+            ],
+            "l texo iempre"
+        ],
+        [
+            "quimera",
+            [
+                "das y",
+                "relen"
+            ],
+            "das yrelen"
+        ]
+    ]
+}

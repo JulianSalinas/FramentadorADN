@@ -1,136 +1,1064 @@
 {
-    "archivo": "../files/entrada.txt",
+    "archivo": "C:/Git/FramentadorADN/Proyecto II/files/entrada.txt",
     "cantidad_fragmentos": 50,
     "promedio_tamanho": 6,
     "desviacion_estandar": 2,
     "rango_traslape": [
-        1,
-        8
+        0,
+        11
     ],
     "probabilidades": {
-        "sustituciones": 7,
-        "inserciones": 12,
-        "deleciones": 8,
-        "inversiones": 9,
-        "quimeras": 9
+        "sustituciones": 83,
+        "inserciones": 46,
+        "deleciones": 81,
+        "inversiones": 99,
+        "quimeras": 71
     },
     "errores": [
         [
             "sustitucion",
-            "el tex",
-            "ml tex"
+            "m Ipsu",
+            "m Ipau"
         ],
         [
             "sustitucion",
-            " imp",
-            " imt"
+            "Ipsum e",
+            "Issum e"
         ],
         [
             "sustitucion",
-            "de tex",
-            "dentex"
+            "implem",
+            "i\"plem"
         ],
         [
-            "insercion",
-            "m es si",
-            "m es esi"
+            "sustitucion",
+            "plement",
+            "plsment"
         ],
         [
-            "insercion",
-            "impleme",
-            "implneme"
+            "sustitucion",
+            "ente e",
+            "ente q"
         ],
         [
-            "insercion",
+            "sustitucion",
+            "nte el ",
+            "ntelel "
+        ],
+        [
+            "sustitucion",
+            "el t",
+            "eu t"
+        ],
+        [
+            "sustitucion",
+            "te el t",
+            "to el t"
+        ],
+        [
+            "sustitucion",
+            "nte e",
+            "nte e"
+        ],
+        [
+            "sustitucion",
+            "lemen",
+            "lemen"
+        ],
+        [
+            "sustitucion",
+            " simp",
+            " simp"
+        ],
+        [
+            "sustitucion",
+            "lemen",
+            "lecen"
+        ],
+        [
+            "sustitucion",
+            "simple",
+            "simpne"
+        ],
+        [
+            "sustitucion",
+            "emente",
+            "emrnte"
+        ],
+        [
+            "sustitucion",
+            " el te",
+            " nl te"
+        ],
+        [
+            "sustitucion",
+            "te el ",
+            "te il "
+        ],
+        [
+            "sustitucion",
+            "emen",
+            "emeu"
+        ],
+        [
+            "sustitucion",
+            "mente ",
+            "mentes"
+        ],
+        [
+            "sustitucion",
+            "ment",
+            "m,nt"
+        ],
+        [
+            "sustitucion",
+            "imple",
+            "impue"
+        ],
+        [
+            "sustitucion",
+            "ente el",
+            "egte el"
+        ],
+        [
+            "sustitucion",
+            " text",
+            " texT"
+        ],
+        [
+            "sustitucion",
+            "l te",
+            "m te"
+        ],
+        [
+            "sustitucion",
+            "te el ",
+            "te er "
+        ],
+        [
+            "sustitucion",
+            " el t",
+            " yl t"
+        ],
+        [
+            "sustitucion",
+            "ente el",
+            "ecte el"
+        ],
+        [
+            "sustitucion",
+            "te el",
+            "ue el"
+        ],
+        [
+            "sustitucion",
+            "ement",
+            "euent"
+        ],
+        [
+            "sustitucion",
+            "emente",
+            "emrnte"
+        ],
+        [
+            "sustitucion",
+            "leme",
+            "lehe"
+        ],
+        [
+            "sustitucion",
+            "ente el",
+            "emte el"
+        ],
+        [
+            "sustitucion",
             " texto ",
-            " teixto "
+            " textt "
+        ],
+        [
+            "sustitucion",
+            " texto ",
+            " textn "
+        ],
+        [
+            "sustitucion",
+            "xto de",
+            "xtoede"
+        ],
+        [
+            "sustitucion",
+            "to d",
+            "so d"
+        ],
+        [
+            "sustitucion",
+            "de rell",
+            "de rexl"
+        ],
+        [
+            "sustitucion",
+            "lleno",
+            "lleIo"
+        ],
+        [
+            "sustitucion",
+            "elleno",
+            "elseno"
+        ],
+        [
+            "sustitucion",
+            "o de",
+            "o d\u00b3"
+        ],
+        [
+            "sustitucion",
+            "elleno ",
+            "elleno "
+        ],
+        [
+            "sustitucion",
+            "e rel",
+            "e re,"
         ],
         [
             "insercion",
-            "o de l",
-            "oa de l"
+            "m Ipau",
+            "m iIpau"
         ],
         [
             "insercion",
-            "s de ",
-            "s des "
+            "Issum e",
+            "Iassum e"
         ],
         [
             "insercion",
-            "e texto",
-            "e tex\u00b3to"
+            "um es ",
+            "eum es "
+        ],
+        [
+            "insercion",
+            "s si",
+            "s ssi"
+        ],
+        [
+            "insercion",
+            "plsment",
+            "plsdment"
+        ],
+        [
+            "insercion",
+            "eu t",
+            "peu t"
+        ],
+        [
+            "insercion",
+            "to el t",
+            "tor el t"
+        ],
+        [
+            "insercion",
+            "lecen",
+            "llecen"
+        ],
+        [
+            "insercion",
+            "emrnte",
+            "emrante"
+        ],
+        [
+            "insercion",
+            "te el ",
+            "te eel "
+        ],
+        [
+            "insercion",
+            " nl te",
+            "n nl te"
+        ],
+        [
+            "insercion",
+            "emeu",
+            "vemeu"
+        ],
+        [
+            "insercion",
+            "mente e",
+            "meinte e"
+        ],
+        [
+            "insercion",
+            " texT",
+            " texaT"
+        ],
+        [
+            "insercion",
+            "te er ",
+            "nte er "
+        ],
+        [
+            "insercion",
+            "e el ",
+            "e elm "
+        ],
+        [
+            "insercion",
+            "ue el",
+            "uer el"
+        ],
+        [
+            "insercion",
+            "emrnte",
+            "emrntte"
+        ],
+        [
+            "insercion",
+            "xtoede",
+            "ixtoede"
+        ],
+        [
+            "insercion",
+            "lleIo",
+            "llezIo"
+        ],
+        [
+            "insercion",
+            "eno de ",
+            "eneo de "
+        ],
+        [
+            "insercion",
+            "o d\u00b3",
+            "on d\u00b3"
+        ],
+        [
+            "insercion",
+            "elleno ",
+            "elloeno "
+        ],
+        [
+            "delecion",
+            "Lorem",
+            "Lorm"
+        ],
+        [
+            "delecion",
+            "Iassum ",
+            "Iassm "
+        ],
+        [
+            "delecion",
+            "eum es ",
+            "um es "
+        ],
+        [
+            "delecion",
+            "plsdmen",
+            "pldmen"
+        ],
+        [
+            "delecion",
+            "ente q",
+            "ente "
+        ],
+        [
+            "delecion",
+            "ntelel ",
+            "ntele "
+        ],
+        [
+            "delecion",
+            "peu t",
+            "pe t"
+        ],
+        [
+            "delecion",
+            "tor el ",
+            "tor el"
+        ],
+        [
+            "delecion",
+            "nte e",
+            "ne e"
         ],
         [
             "delecion",
             "lemen",
-            "lemn"
+            "emen"
         ],
         [
             "delecion",
-            " text",
-            " ext"
+            " simp",
+            " imp"
         ],
         [
             "delecion",
-            "elleno",
-            "elleo"
+            "llecen",
+            "llcen"
         ],
         [
             "delecion",
-            "las imp",
-            "lasimp"
+            "simpne",
+            "sipne"
+        ],
+        [
+            "delecion",
+            "emrante",
+            "emante"
+        ],
+        [
+            "delecion",
+            "te eel ",
+            "t eel "
+        ],
+        [
+            "delecion",
+            "te il ",
+            "te i "
+        ],
+        [
+            "delecion",
+            "vemeu",
+            "veme"
+        ],
+        [
+            "delecion",
+            "mentes",
+            "mente"
+        ],
+        [
+            "delecion",
+            "m,nt",
+            "mnt"
+        ],
+        [
+            "delecion",
+            "impue",
+            "impe"
+        ],
+        [
+            "delecion",
+            "meinte ",
+            "meint "
+        ],
+        [
+            "delecion",
+            " texaT",
+            " texT"
+        ],
+        [
+            "delecion",
+            "nte er ",
+            "nte r "
+        ],
+        [
+            "delecion",
+            " yl t",
+            " yl "
+        ],
+        [
+            "delecion",
+            "ecte el",
+            "ecteel"
+        ],
+        [
+            "delecion",
+            "l tex",
+            "ltex"
+        ],
+        [
+            "delecion",
+            "uer el",
+            "uer e"
+        ],
+        [
+            "delecion",
+            "emrntte",
+            "emrtte"
+        ],
+        [
+            "delecion",
+            "mple",
+            "ple"
+        ],
+        [
+            "delecion",
+            "lehe",
+            "lhe"
+        ],
+        [
+            "delecion",
+            "emte el",
+            "emte e"
+        ],
+        [
+            "delecion",
+            " textt ",
+            "textt "
+        ],
+        [
+            "delecion",
+            " textn ",
+            " texn "
+        ],
+        [
+            "delecion",
+            "ixtoede",
+            "xtoede"
+        ],
+        [
+            "delecion",
+            "so d",
+            "so "
+        ],
+        [
+            "delecion",
+            "de rexl",
+            "de rxl"
+        ],
+        [
+            "delecion",
+            "eneo de",
+            "ene de"
+        ],
+        [
+            "delecion",
+            "elseno",
+            "elseo"
+        ],
+        [
+            "delecion",
+            "elloeno",
+            "elloeo"
+        ],
+        [
+            "delecion",
+            "e re,",
+            "e e,"
         ],
         [
             "insercion",
-            "rem Ips",
-            "rem tIps"
+            "Lorm",
+            "tLorm"
         ],
         [
             "insercion",
-            "mente ",
-            "menute "
+            "m iIpau",
+            "m\u00c3 iIpau"
         ],
         [
             "insercion",
-            "e las",
-            "ee las"
+            "Iassm ",
+            "Iassem "
         ],
         [
             "insercion",
-            "chivos ",
-            "dchivos "
+            "um es ",
+            "uem es "
+        ],
+        [
+            "insercion",
+            "s ssi",
+            "sn ssi"
+        ],
+        [
+            "insercion",
+            "i\"plem",
+            "i\"pelem"
+        ],
+        [
+            "insercion",
+            "pldmen",
+            "peldmen"
+        ],
+        [
+            "insercion",
+            "ente ",
+            "entee "
+        ],
+        [
+            "insercion",
+            "ntele ",
+            "\u00c3ntele "
+        ],
+        [
+            "insercion",
+            "pe t",
+            "pse t"
+        ],
+        [
+            "insercion",
+            "tor el",
+            "teor el"
+        ],
+        [
+            "insercion",
+            "ne e",
+            "rne e"
+        ],
+        [
+            "insercion",
+            "emen",
+            "eamen"
+        ],
+        [
+            "insercion",
+            " imp",
+            " iqmp"
+        ],
+        [
+            "insercion",
+            "llcen",
+            "sllcen"
+        ],
+        [
+            "insercion",
+            "sipne",
+            "sipnoe"
+        ],
+        [
+            "insercion",
+            "emante",
+            "emdante"
+        ],
+        [
+            "insercion",
+            "t eel ",
+            "tn eel "
+        ],
+        [
+            "insercion",
+            "n nl te",
+            "on nl te"
+        ],
+        [
+            "insercion",
+            "te i ",
+            "tel i "
+        ],
+        [
+            "insercion",
+            "veme",
+            "vemie"
+        ],
+        [
+            "insercion",
+            "mente",
+            "mennte"
+        ],
+        [
+            "insercion",
+            "mnt",
+            "mnnt"
+        ],
+        [
+            "insercion",
+            "impe",
+            "iempe"
+        ],
+        [
+            "insercion",
+            "meint ",
+            "mseint "
+        ],
+        [
+            "insercion",
+            "egte el",
+            "egtne el"
+        ],
+        [
+            "insercion",
+            " texT",
+            " ltexT"
+        ],
+        [
+            "insercion",
+            "m te",
+            "m tne"
+        ],
+        [
+            "insercion",
+            "nte r ",
+            "5nte r "
+        ],
+        [
+            "insercion",
+            " yl ",
+            " dyl "
+        ],
+        [
+            "insercion",
+            "e elm ",
+            "e elam "
+        ],
+        [
+            "insercion",
+            "ltex",
+            "altex"
+        ],
+        [
+            "insercion",
+            "uer e",
+            "guer e"
+        ],
+        [
+            "insercion",
+            "euent",
+            "eunent"
+        ],
+        [
+            "insercion",
+            "emrtte",
+            "emrttle"
+        ],
+        [
+            "insercion",
+            "ple",
+            "plte"
+        ],
+        [
+            "insercion",
+            "lhe",
+            "lohe"
+        ],
+        [
+            "insercion",
+            "emte e",
+            "eomte e"
+        ],
+        [
+            "insercion",
+            "textt ",
+            "textut "
+        ],
+        [
+            "insercion",
+            " texn ",
+            " mtexn "
+        ],
+        [
+            "insercion",
+            "xtoede",
+            "xteoede"
+        ],
+        [
+            "insercion",
+            "so ",
+            "eso "
+        ],
+        [
+            "insercion",
+            "de rxl",
+            "det rxl"
+        ],
+        [
+            "insercion",
+            "llezIo",
+            "mllezIo"
+        ],
+        [
+            "insercion",
+            "ene de",
+            "emne de"
+        ],
+        [
+            "insercion",
+            "elseo",
+            "elsyeo"
+        ],
+        [
+            "insercion",
+            "on d\u00b3",
+            "on de\u00b3"
+        ],
+        [
+            "insercion",
+            "elloeo",
+            "elloeeo"
+        ],
+        [
+            "insercion",
+            "e e,",
+            "e ee,"
         ],
         [
             "quimera",
             [
-                "de rell",
-                "ivos d"
+                "lohe",
+                "eomte e"
             ],
-            "de rellivos d"
+            "loheeomte e"
         ],
         [
             "quimera",
             [
-                "ente e",
-                "s de t"
+                "on nl t",
+                "elloeeo"
             ],
-            "ente es de t"
+            "on nl telloeeo"
         ],
         [
             "quimera",
             [
-                "o de la",
-                "implnem"
+                "det rxl",
+                "teor el"
             ],
-            "o de laimplnem"
+            "det rxlteor el"
         ],
         [
             "quimera",
             [
-                "o de la",
-                "m es es"
+                "eso ",
+                "vemie"
             ],
-            "o de lam es es"
+            "eso vemie"
+        ],
+        [
+            "quimera",
+            [
+                "teor el",
+                "i\"pelem"
+            ],
+            "teor eli\"pelem"
+        ],
+        [
+            "quimera",
+            [
+                "entee ",
+                "tLorm"
+            ],
+            "entee tLorm"
+        ],
+        [
+            "quimera",
+            [
+                "uem es ",
+                "e elam "
+            ],
+            "uem es e elam "
+        ],
+        [
+            "quimera",
+            [
+                "Iassem ",
+                "\u00c3ntele "
+            ],
+            "Iassem \u00c3ntele "
+        ],
+        [
+            "quimera",
+            [
+                "eso ",
+                "tel i "
+            ],
+            "eso tel i "
+        ],
+        [
+            "quimera",
+            [
+                "tel i ",
+                "e elam "
+            ],
+            "tel i e elam "
+        ],
+        [
+            "quimera",
+            [
+                "i\"pelem",
+                "sn ssi"
+            ],
+            "i\"pelemsn ssi"
+        ],
+        [
+            "quimera",
+            [
+                "emrttle",
+                "entee "
+            ],
+            "emrttleentee "
+        ],
+        [
+            "quimera",
+            [
+                "sllcen",
+                "peldmen"
+            ],
+            "sllcenpeldmen"
+        ],
+        [
+            "quimera",
+            [
+                "sn ssi",
+                "tn eel "
+            ],
+            "sn ssitn eel "
+        ],
+        [
+            "quimera",
+            [
+                "i\"pelem",
+                "pse t"
+            ],
+            "i\"pelempse t"
+        ],
+        [
+            "quimera",
+            [
+                "textut ",
+                "mllezIo"
+            ],
+            "textut mllezIo"
+        ],
+        [
+            "quimera",
+            [
+                "5nte r ",
+                "rne e"
+            ],
+            "5nte r rne e"
+        ],
+        [
+            "quimera",
+            [
+                "tLorm",
+                "mnnt"
+            ],
+            "tLormmnnt"
+        ],
+        [
+            "quimera",
+            [
+                "e elam ",
+                "ecteel"
+            ],
+            "e elam ecteel"
+        ],
+        [
+            "quimera",
+            [
+                "sn ssi",
+                "mennte"
+            ],
+            "sn ssimennte"
+        ],
+        [
+            "quimera",
+            [
+                "e elam ",
+                "altex"
+            ],
+            "e elam altex"
+        ],
+        [
+            "quimera",
+            [
+                "on nl t",
+                "xteoede"
+            ],
+            "on nl txteoede"
+        ],
+        [
+            "quimera",
+            [
+                "sllcen",
+                "eomte e"
+            ],
+            "sllceneomte e"
+        ],
+        [
+            "quimera",
+            [
+                "elloeeo",
+                "iempe"
+            ],
+            "elloeeoiempe"
+        ],
+        [
+            "quimera",
+            [
+                "i\"pelem",
+                "Iassem "
+            ],
+            "i\"pelemIassem "
+        ],
+        [
+            "quimera",
+            [
+                "sipnoe",
+                "\u00c3ntele "
+            ],
+            "sipnoe\u00c3ntele "
+        ],
+        [
+            "quimera",
+            [
+                "mllezIo",
+                "on de\u00b3"
+            ],
+            "mllezIoon de\u00b3"
+        ],
+        [
+            "quimera",
+            [
+                "elloeeo",
+                "tLorm"
+            ],
+            "elloeeotLorm"
+        ],
+        [
+            "quimera",
+            [
+                "teor el",
+                "\u00c3ntele "
+            ],
+            "teor el\u00c3ntele "
+        ],
+        [
+            "quimera",
+            [
+                "sn ssi",
+                "i\"pelem"
+            ],
+            "sn ssii\"pelem"
+        ],
+        [
+            "quimera",
+            [
+                "ecteel",
+                "tel i "
+            ],
+            "ecteeltel i "
+        ],
+        [
+            "quimera",
+            [
+                "sn ssi",
+                "\u00c3ntele "
+            ],
+            "sn ssi\u00c3ntele "
+        ],
+        [
+            "quimera",
+            [
+                "m tne",
+                "plte"
+            ],
+            "m tneplte"
+        ],
+        [
+            "quimera",
+            [
+                "xteoede",
+                "tLorm"
+            ],
+            "xteoedetLorm"
+        ],
+        [
+            "quimera",
+            [
+                "m\u00c3 iIpa",
+                "Iassem "
+            ],
+            "m\u00c3 iIpaIassem "
         ]
     ]
 }

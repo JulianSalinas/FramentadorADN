@@ -77,7 +77,7 @@ class MainWindow(QMainWindow):
         cantidad = self.spinCantColecciones.value()
 
         for i in range(cantidad):
-            fragmentos = self.ejecutar_shotgun(descripcion)
+            fragmentos = self.ejecutar_shotgun(descripcion)[0]
             self.guardar_archivos_obtenidos(fragmentos, descripcion, consecutivo=i+1)
 
         os.system("explorer " + os.path.abspath(self.txtDestino.text()))
@@ -105,6 +105,20 @@ class MainWindow(QMainWindow):
         if filename is not "":
             self.statusbar.setText("Archivo seleccionado: " + os.path.split(filename)[1])
             self.txtFuente.setText(filename)
+
+            if filename.endswith(".json"):
+                params = self.dao_shotgun.abrir_archivo_descriptivo(filename)
+
+                self.spinCantidad.setValue(params["cantidad_fragmentos"])
+                self.spinLongitud.setValue(params["promedio_tamanho"])
+                self.spinDesviacion.setValue(params["desviacion_estandar"])
+
+                probs = params["probabilidades"]
+                self.spinSustitucion.setValue(probs["sustituciones"])
+                self.spinInsercion.setValue(probs["inserciones"])
+                self.spinDelecion.setValue(probs["deleciones"])
+                self.spinInversion.setValue(probs["inversiones"])
+                self.spinQuimeras.setValue(probs["quimeras"])
 
     # ------------------------------------------------------------------------------------------------------------------
 
@@ -186,8 +200,13 @@ class MainWindow(QMainWindow):
 
     def extraer_informacion_procesamiento(self):
 
+        archivo = self.txtFuente.text()
+        if archivo.endswith(".json"):
+            archivo = self.dao_shotgun.abrir_archivo_descriptivo(archivo)
+            archivo = archivo["archivo"]
+
         return {
-            "archivo": self.txtFuente.text(),
+            "archivo": archivo,
             "cantidad_fragmentos": self.spinCantidad.value(),
             "promedio_tamanho": self.spinLongitud.value(),
             "desviacion_estandar": self.spinDesviacion.value(),
@@ -218,9 +237,8 @@ class MainWindow(QMainWindow):
             archivo_fragmentos = os.path.join(self.txtDestino.text(), self.txtNombre.text() + str(consecutivo) + ".txt")
             archivo_descriptivo = os.path.join(self.txtDestino.text(), self.txtNombre.text() + str(consecutivo) + ".json")
 
-        dao_shotgun = DAOShotgun()
-        dao_shotgun.guardar_archivo_fragmentos(fragmentos, archivo_fragmentos)
-        dao_shotgun.guardar_archivo_descriptivo(descripcion, archivo_descriptivo)
+        self.dao_shotgun.guardar_archivo_fragmentos(fragmentos, archivo_fragmentos)
+        self.dao_shotgun.guardar_archivo_descriptivo(descripcion, archivo_descriptivo)
 
         ap = lambda x: os.path.abspath(x)
         return ap(archivo_fragmentos), ap(archivo_descriptivo)

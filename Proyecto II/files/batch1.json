@@ -1,0 +1,349 @@
+{
+    "archivo": "../files/entrada.txt",
+    "cantidad_fragmentos": 50,
+    "promedio_tamanho": 6,
+    "desviacion_estandar": 2,
+    "rango_traslape": [
+        1,
+        8
+    ],
+    "probabilidades": {
+        "sustituciones": 23,
+        "inserciones": 28,
+        "deleciones": 38,
+        "inversiones": 12,
+        "quimeras": 21
+    },
+    "errores": [
+        [
+            "sustitucion",
+            "el text",
+            "el texd"
+        ],
+        [
+            "sustitucion",
+            "el te",
+            "ex te"
+        ],
+        [
+            "sustitucion",
+            " text",
+            "ntext"
+        ],
+        [
+            "sustitucion",
+            "texto d",
+            "telto d"
+        ],
+        [
+            "sustitucion",
+            "elleno",
+            "elleoo"
+        ],
+        [
+            "sustitucion",
+            "no d",
+            "ne d"
+        ],
+        [
+            "sustitucion",
+            "renta",
+            "nenta"
+        ],
+        [
+            "sustitucion",
+            "tas y a",
+            "tns y a"
+        ],
+        [
+            "sustitucion",
+            "entas y",
+            "entus y"
+        ],
+        [
+            "sustitucion",
+            " y ar",
+            "ly ar"
+        ],
+        [
+            "sustitucion",
+            "s y a",
+            "d y a"
+        ],
+        [
+            "insercion",
+            " es si",
+            " es isi"
+        ],
+        [
+            "insercion",
+            "impl",
+            "ismpl"
+        ],
+        [
+            "insercion",
+            "elleoo",
+            "ielleoo"
+        ],
+        [
+            "insercion",
+            "ne d",
+            "ene d"
+        ],
+        [
+            "insercion",
+            "no de",
+            "no pde"
+        ],
+        [
+            "insercion",
+            "pren",
+            "precn"
+        ],
+        [
+            "insercion",
+            "mprenta",
+            "mpraenta"
+        ],
+        [
+            "insercion",
+            "nenta",
+            "ndenta"
+        ],
+        [
+            "insercion",
+            "tas ",
+            "tass "
+        ],
+        [
+            "insercion",
+            "tas y",
+            "tas sy"
+        ],
+        [
+            "insercion",
+            "entus y",
+            "entu,s y"
+        ],
+        [
+            "insercion",
+            "ly ar",
+            ".ly ar"
+        ],
+        [
+            "insercion",
+            "tas y ",
+            "tIas y "
+        ],
+        [
+            "insercion",
+            "s y a",
+            "s ry a"
+        ],
+        [
+            "delecion",
+            "orem",
+            "rem"
+        ],
+        [
+            "delecion",
+            "rem ",
+            "em "
+        ],
+        [
+            "delecion",
+            "um es ",
+            "um e "
+        ],
+        [
+            "delecion",
+            "te el t",
+            "te elt"
+        ],
+        [
+            "delecion",
+            "ex te",
+            "exte"
+        ],
+        [
+            "delecion",
+            " texto ",
+            " texto"
+        ],
+        [
+            "delecion",
+            "texto d",
+            "texo d"
+        ],
+        [
+            "delecion",
+            "e rell",
+            "e ell"
+        ],
+        [
+            "delecion",
+            "ielleoo",
+            "ieleoo"
+        ],
+        [
+            "delecion",
+            "no pde",
+            "no pd"
+        ],
+        [
+            "delecion",
+            "no de ",
+            "o de "
+        ],
+        [
+            "delecion",
+            "s impre",
+            "s imre"
+        ],
+        [
+            "delecion",
+            "precn",
+            "pecn"
+        ],
+        [
+            "delecion",
+            "mprenta",
+            "prenta"
+        ],
+        [
+            "delecion",
+            "ndenta",
+            "ndeta"
+        ],
+        [
+            "delecion",
+            "tns y a",
+            "ns y a"
+        ],
+        [
+            "delecion",
+            ".ly ar",
+            ".ly a"
+        ],
+        [
+            "delecion",
+            "s ry a",
+            "s ry "
+        ],
+        [
+            "delecion",
+            "tas y ",
+            "ta y "
+        ],
+        [
+            "insercion",
+            "s sim",
+            "s dsim"
+        ],
+        [
+            "insercion",
+            "no pd",
+            "tno pd"
+        ],
+        [
+            "insercion",
+            "o de ",
+            "o dee "
+        ],
+        [
+            "insercion",
+            "mpraent",
+            "mp\u00c3raent"
+        ],
+        [
+            "insercion",
+            "ns y a",
+            "nsL y a"
+        ],
+        [
+            "insercion",
+            "entu,s ",
+            "enatu,s "
+        ],
+        [
+            "quimera",
+            [
+                "tass ",
+                "mplem"
+            ],
+            "tass mplem"
+        ],
+        [
+            "quimera",
+            [
+                "exte",
+                " texto"
+            ],
+            "exte texto"
+        ],
+        [
+            "quimera",
+            [
+                "texo d",
+                "mprenta"
+            ],
+            "texo dmprenta"
+        ],
+        [
+            "quimera",
+            [
+                "tass ",
+                "texto "
+            ],
+            "tass texto "
+        ],
+        [
+            "quimera",
+            [
+                "el texd",
+                "o dee "
+            ],
+            "el texdo dee "
+        ],
+        [
+            "quimera",
+            [
+                "tIas y ",
+                "nsL y a"
+            ],
+            "tIas y nsL y a"
+        ],
+        [
+            "quimera",
+            [
+                "d y a",
+                "o dee "
+            ],
+            "d y ao dee "
+        ],
+        [
+            "quimera",
+            [
+                "o dee ",
+                "d y a"
+            ],
+            "o dee d y a"
+        ],
+        [
+            "quimera",
+            [
+                "mprenta",
+                " imp"
+            ],
+            "mprenta imp"
+        ],
+        [
+            "quimera",
+            [
+                " y arch",
+                "s dsim"
+            ],
+            " y archs dsim"
+        ]
+    ]
+}
